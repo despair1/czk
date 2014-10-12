@@ -25,8 +25,9 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1490058335" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1513482740" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/despair1/test1/curlcpp/include"/>
+									<listOptionValue builtIn="false" value="/home/despair1/test1/jsoncpp/jsoncpp/include/"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.dialect.std.663401426" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.663401426" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.840288732" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.926167766" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
@@ -40,10 +41,13 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.217408468" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.libs.1277643413" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="curlcpp"/>
+									<listOptionValue builtIn="false" value="profiler"/>
+									<listOptionValue builtIn="false" value="jsoncpp"/>
 									<listOptionValue builtIn="false" value="curl"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1119445754" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/home/despair1/test1/curlcpp/build/src"/>
+									<listOptionValue builtIn="false" value="/home/despair1/test1/jsoncpp/jsoncpp/build/debug/lib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1350292810" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

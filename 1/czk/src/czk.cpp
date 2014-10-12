@@ -50,7 +50,7 @@ curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 1); */
 int main1() {
 	std::ofstream myfile;
 	myfile.open("test.txt");
-	myfile<<"wtf?";
+	//myfile<<"wtf?";
 	get_pilot_json("90376921","201407120000",myfile);
 	//fclose(fp);
 	std::cout << "!!!Hello World!!!" << std::endl; // prints !!!Hello World!!!
