@@ -25,7 +25,7 @@ int get_json(std::ifstream& f) {
 	return 0;
 }
 
-int main() {
+int main2() {
 	ProfilerStart("test2.txt");
 	std::ifstream myfile;
 	myfile.open("test.txt");
