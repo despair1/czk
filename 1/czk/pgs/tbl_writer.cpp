@@ -1,16 +1,17 @@
 /*
- * 001conn.cpp
+ * pgs.cpp
  *
- *  Created on: Oct 12, 2014
+ *  Created on: Oct 14, 2014
  *      Author: despair1
  */
 #include <pqxx/pqxx>
 #include <pqxx/except.hxx>
 #include <iostream>
+#include <vector>
 using std::cerr;
 using std::endl;
 using std::cout;
-int test_connection(const std::string& conn_name) {
+int create_tbl1(const std::string& conn_name) {
 	try {
 		std::stringstream s("");
 		s<<"dbname="<<conn_name;
@@ -23,11 +24,16 @@ int test_connection(const std::string& conn_name) {
 		pqxx::work T(c, "test1");
 
 		// Perform a query on the database, storing result tuples in R.
-		pqxx::result R( T.exec("SELECT * FROM pg_tables") );
-
+		//pqxx::result R( T.exec("CREATE TABLE test1 (id INTEGER)") );
+		pqxx::tablewriter W(T, "test1");
 		// We're expecting to find some tables...
-		if (R.empty()) throw std::logic_error("No tables found!");
+		//if (R.empty()) throw std::logic_error("No tables found!");
 		// Process each successive result tuple
+		pqxx::result R( T.exec("SELECT * FROM test1 ") );
+		std::vector<int> MoreData;
+		MoreData.push_back(3);
+		    MoreData.push_back(4);
+		    W.insert(MoreData);
 		for (pqxx::result::const_iterator c1 = R.begin(); c1 != R.end(); ++c1)
 		{
 		  // Dump tuple number and column 0 value to cout.  Read the value using
@@ -64,15 +70,6 @@ int test_connection(const std::string& conn_name) {
 	 return 0;
 }
 
-int test_cursor(const std::string& conn_name,
-		int BlockSize=1);
-int create_tbl(const std::string& conn_name);
-int main() {
-	//cout<<"hello lamerz "<<test_connection("zk")<<endl;
-	//cout<<"hello lamerz "<<test_cursor("zk")<<endl;
-	cout<<"hello lamerz "<<create_tbl("zk")<<endl;
-	return 0;
-}
 
 
 
