@@ -11,7 +11,7 @@
 using std::cerr;
 using std::endl;
 using std::cout;
-int create_tbl1(const std::string& conn_name) {
+int table_writer(const std::string& conn_name) {
 	try {
 		std::stringstream s("");
 		s<<"dbname="<<conn_name;
@@ -21,19 +21,21 @@ int create_tbl1(const std::string& conn_name) {
 			 << "Protocol version: " << c.protocol_version() << endl;
 		// Begin a transaction acting on our current connection.  Give it a human-
 		// readable name so the library can include it in error messages.
-		pqxx::work T(c, "test1");
-
+		pqxx::work T(c, "test2");
+		pqxx::result R1( T.exec("CREATE TABLE IF NOT EXISTS test1 (id INTEGER)") );
 		// Perform a query on the database, storing result tuples in R.
 		//pqxx::result R( T.exec("CREATE TABLE test1 (id INTEGER)") );
 		pqxx::tablewriter W(T, "test1");
 		// We're expecting to find some tables...
 		//if (R.empty()) throw std::logic_error("No tables found!");
 		// Process each successive result tuple
-		pqxx::result R( T.exec("SELECT * FROM test1 ") );
+
 		std::vector<int> MoreData;
 		MoreData.push_back(3);
-		    MoreData.push_back(4);
+		    //MoreData.push_back(4);
 		    W.insert(MoreData);
+		W.complete();
+		pqxx::result R( T.exec("SELECT * FROM test1 ") );
 		for (pqxx::result::const_iterator c1 = R.begin(); c1 != R.end(); ++c1)
 		{
 		  // Dump tuple number and column 0 value to cout.  Read the value using

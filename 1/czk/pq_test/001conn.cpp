@@ -67,10 +67,12 @@ int test_connection(const std::string& conn_name) {
 int test_cursor(const std::string& conn_name,
 		int BlockSize=1);
 int create_tbl(const std::string& conn_name);
-int main() {
+int table_writer(const std::string& conn_name);
+int main3() {
 	//cout<<"hello lamerz "<<test_connection("zk")<<endl;
 	//cout<<"hello lamerz "<<test_cursor("zk")<<endl;
 	cout<<"hello lamerz "<<create_tbl("zk")<<endl;
+	cout<<"hello lamerz "<<table_writer("zk")<<endl;
 	return 0;
 }
 
