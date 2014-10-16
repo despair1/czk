@@ -42,23 +42,23 @@
 									<listOptionValue builtIn="false" value="/home/despair1/test1/curlcpp/include"/>
 									<listOptionValue builtIn="false" value="/home/despair1/test1/jsoncpp/jsoncpp/include/"/>
 								</option>
-								<option id="gnu.c.compiler.option.include.files.1314135123" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" valueType="includeFiles"/>
+								<option id="gnu.c.compiler.option.include.files.1314135123" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.218902319" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1092781331" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.217408468" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.libs.1277643413" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
--									<listOptionValue builtIn="false" value="curlcpp"/>
--									<listOptionValue builtIn="false" value="pqxx"/>
--									<listOptionValue builtIn="false" value="pq"/>
--									<listOptionValue builtIn="false" value="profiler"/>
--									<listOptionValue builtIn="false" value="jsoncpp"/>
--									<listOptionValue builtIn="false" value="curl"/>
--								</option>
--								<option id="gnu.cpp.link.option.paths.1119445754" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
--									<listOptionValue builtIn="false" value="/home/despair1/test1/curlcpp/build/src"/>
--									<listOptionValue builtIn="false" value="/home/despair1/test1/jsoncpp/jsoncpp/build/debug/lib"/>
--								</option>
+									<listOptionValue builtIn="false" value="curlcpp"/>
+									<listOptionValue builtIn="false" value="pqxx"/>
+									<listOptionValue builtIn="false" value="pq"/>
+									<listOptionValue builtIn="false" value="profiler"/>
+									<listOptionValue builtIn="false" value="jsoncpp"/>
+									<listOptionValue builtIn="false" value="curl"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.1119445754" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/despair1/test1/curlcpp/build/src"/>
+									<listOptionValue builtIn="false" value="/home/despair1/test1/jsoncpp/jsoncpp/build/debug/lib"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1350292810" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

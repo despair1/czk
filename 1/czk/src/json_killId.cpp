@@ -34,7 +34,8 @@ int get_killid_json(std::ifstream& f,
 	}
 	return 0;
 }
-int main() {
+int add_killid_2pg(const std::string& conn_name, const list< list <string> >& kills_id ) ;
+int main6() {
 	ProfilerStart("test2.txt");
 	std::ifstream myfile;
 	myfile.open("test.txt");
@@ -43,6 +44,7 @@ int main() {
 	//fclose(fp);
 	list< list<string> > l;
 	get_killid_json(myfile,l);
+	add_killid_2pg("zk",l);
 	std::cout << "!!!Hello World!!!" << std::endl; // prints !!!Hello World!!!
 	for (list<list<string> >::const_iterator i=l.begin();
 			i!=l.end();i++) {
