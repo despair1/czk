@@ -33,7 +33,7 @@ int show_new_kills(std::ifstream& f,
 	return 0;
 }
 //int add_killid_2pg(const std::string& conn_name, const list< list <string> >& kills_id ) ;
-int main() {
+int main8() {
 	//ProfilerStart("test2.txt");
 	std::ifstream myfile;
 	myfile.open("test.txt");
@@ -45,7 +45,7 @@ int main() {
 	//add_killid_2pg("zk",l);
 	std::cout << "!!!Hello World!!!" << std::endl; // prints !!!Hello World!!!
 	std::set<string> ss;
-	get_new_killid(ss);
+	//get_new_killid(ss);
 	show_new_kills(myfile,ss);
 	/*
 	for (list<list<string> >::const_iterator i=l.begin();
