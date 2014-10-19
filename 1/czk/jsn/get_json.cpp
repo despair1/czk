@@ -8,10 +8,12 @@
 #include <json/json.h>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
-int get_json(std::ifstream& f,Json::Value& root) {
+int get_json(std::stringstream& f,Json::Value& root) {
 	Json::Reader reader;
 	//Json::Value root1;
+	std::cout<<"begin parsing json"<<std::endl;
 	bool parsingSuccessful = reader.parse( f, root );
 	if ( !parsingSuccessful )
 	{
@@ -21,5 +23,6 @@ int get_json(std::ifstream& f,Json::Value& root) {
 		throw std::logic_error("Failed to parse configuration 111!\n");
 		return 1;
 	}
+	std::cout<<"parsed ok"<<std::endl;
 	return 0;
 }

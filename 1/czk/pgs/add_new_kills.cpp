@@ -11,6 +11,7 @@
 #include <pqxx/pqxx>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 using std::cerr;
 using std::endl;
 int add_new_attackers(const Json::Value& root,
@@ -91,14 +92,17 @@ int add_new_kills(const Json::Value& root,
 		}
 	return 0;
 }
-int get_json(std::ifstream& f,Json::Value& root);
+int get_json(std::stringstream& f,Json::Value& root);
 int get_new_killid(pqxx::work& T,std::set<std::string>& new_kills);
 int kill_id2pg(const Json::Value& root,
 		pqxx::work& T) ;
+int read_json(const std::string& url,
+		std::stringstream &s);
 int main() {
 	//ProfilerStart("test2.txt");
-	std::ifstream myfile;
-	myfile.open("test.txt");
+	std::stringstream myfile;
+	//myfile.open("test.txt");
+	read_json("https://zkillboard.com/api/characterID/90376921/startTime/201407120000/",myfile);
 	Json::Value root;
 	std::set<std::string> new_kills_id;
 	try {
@@ -156,7 +160,7 @@ int main() {
 		    return 100;
 		  }
 	std::cout << "!!!Hello World!!!" << std::endl; // prints !!!Hello World!!!
-	myfile.close();
+	//myfile.close();
 	//ProfilerStop();
 	return 0;
 }

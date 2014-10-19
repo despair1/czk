@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include <pqxx/pqxx>
+#include <iostream>
 using std::list;
 using std::string;
 int kill_id2pg(const Json::Value& root,
@@ -26,6 +27,7 @@ int kill_id2pg(const Json::Value& root,
 			temp_table.insert(temp_list);
 			//kills_list.push_back(temp_list);
 		}
+	std::cout<<"added "<<root.size()<<" entry to temp table"<<std::endl;
 	temp_table.complete();
 	return 0;
 

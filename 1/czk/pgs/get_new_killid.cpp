@@ -32,6 +32,7 @@ int get_new_killid(pqxx::work& T,std::set<string>& new_kills) {
 				//	  "\t"<<c1[1].as(std::string())<< endl;
 			  new_kills.insert(c1[0].as(string()));
 			}
+	std::cout<<" founded "<<new_kills.size()<<" new entry"<<std::endl;
 	return 0;
 }
 int get_new_killid1(std::set<string>& new_kills) {
